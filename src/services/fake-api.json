@@ -1,0 +1,16 @@
+{
+    "usuarios": [
+        {
+            "id":"1",
+            "nombre": "mariana osorio",
+            "usuario": "marihermosa",
+            "contraseña": "marihermosa"
+        },
+        {
+            "id": "2",
+            "nombre": "alguien x",
+            "usuario": "usuario2",
+            "contraseña": "usuario2"
+        }
+    ]
+}
