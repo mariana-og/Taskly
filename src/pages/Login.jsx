@@ -56,7 +56,7 @@ const Login = () => {
           <button className="login-button" onClick={() => {inicioSesion()}}>iniciar sesion</button>
         </form>
         <div className="social-account-container">
-          <span className="title">O crea tu cuenta <Link>aqui</Link></span> 
+          <span className="title">O crea tu cuenta <Link to={"/registro"}>aqui</Link></span> 
         </div>
       </div>
     </section>

@@ -1,16 +1,28 @@
 {
-    "usuarios": [
-        {
-            "id":"1",
-            "nombre": "mariana osorio",
-            "usuario": "marihermosa",
-            "contraseña": "marihermosa"
-        },
-        {
-            "id": "2",
-            "nombre": "alguien x",
-            "usuario": "usuario2",
-            "contraseña": "usuario2"
-        }
-    ]
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "mariana osorio",
+      "usuario": "marihermosa",
+      "contraseña": "marihermosa"
+    },
+    {
+      "id": "2",
+      "nombre": "alguien x",
+      "usuario": "usuario2",
+      "contraseña": "usuario2"
+    },
+    {
+      "id": "519f",
+      "nombre": "juan rosales",
+      "usuario": "juanmaata",
+      "contrasena": "1234"
+    },
+    {
+      "id": "daee",
+      "nombre": "juan osorio",
+      "usuario": "juanmta",
+      "contrasena": "1234"
+    }
+  ]
 }
