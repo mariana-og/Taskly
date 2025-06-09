@@ -33,15 +33,6 @@
       "fecha_limite": "2025-07-02",
       "prioridad": "importante",
       "descripcion": "comprar materiales, investigar, explicar funcionalidades y entregarla"
-    }, 
-    {
-      "id_usuario": "2",
-      "id": "1",
-      "titulo": "Realizar maqueta de la celula",
-      "fecha_limite": "2025-07-02",
-      "prioridad": "importante",
-      "descripcion": "comprar materiales, investigar, explicar funcionalidades y entregarla"
     }
   ]
-
 }

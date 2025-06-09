@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import "./PanelPrincipal.css"
+import { alertaConfirmacion } from '../helpers/Funciones'
 let apiTareas = "http://localhost:3000/tareas"
 
 const PanelPrincipal = () => {
@@ -20,6 +21,11 @@ const PanelPrincipal = () => {
     return tareasUsuario;
   }
   let filtradoUsuario = filtrarTareasUsuario();
+
+  
+  function eliminarTarea(id) {
+    alertaConfirmacion(id, apiTareas, getTareas);
+  }
 
 
   return (
@@ -81,7 +87,7 @@ const PanelPrincipal = () => {
                <td>{tarea.descripcion}</td>
               <td>
                 <button className="edit-btn">Editar</button>
-                <button className="delete-btn">Eliminar</button>
+                <button className="delete-btn" onClick={()=>eliminarTarea(tarea.id)}>Eliminar</button>
               </td>
             </tr>
           ))}
