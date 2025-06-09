@@ -1,14 +1,14 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './Login.css'
 import { useEffect, useState } from 'react'
-import { alertaError, alertaRedireccion } from '../helpers/Funciones'
+import { alertaError, alertaRedireccion, generarToken } from '../helpers/Funciones'
 let apiUsuarios = "http://localhost:3000/usuarios"
 
 const Login = () => {
     const [getUsuario, setUsuario] = useState("")
     const [getContraseña, setContraseña] = useState("")
     const [usuarios, setUsuarios]  = useState([])
-    let navigate = useNavigate
+    let navigate = useNavigate()
 
     function getUsuarios() {
         fetch(apiUsuarios)
@@ -36,7 +36,7 @@ const Login = () => {
         "Bienvenido " + buscarUsuario().nombre,
         "En breves segundos será redireccionado al Home",
         "success",
-        "/panel-tareas"
+        "/panel-principal"
       );
     } else {
       alertaError("error", "usuario y/o contraseña incorrectos");
@@ -53,7 +53,7 @@ const Login = () => {
           <input required className="input" type="password" id="password" placeholder="contraseña" 
             onChange={(e) => setContraseña(e.target.value)}
           />
-          <button className="login-button" onClick={() => {inicioSesion()}}>iniciar sesion</button>
+          <button className="login-button" type='button' onClick={inicioSesion}>iniciar sesion</button>
         </form>
         <div className="social-account-container">
           <span className="title">O crea tu cuenta <Link to={"/registro"}>aqui</Link></span> 

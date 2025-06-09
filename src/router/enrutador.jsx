@@ -1,4 +1,5 @@
 import Login from "../pages/Login.jsx"
+import PanelPrincipal from "../pages/PanelPrincipal.jsx"
 import Registro from "../pages/Registro.jsx"
 
 export let enrutador=[
@@ -9,5 +10,9 @@ export let enrutador=[
     {
         path: "/registro",
         element: <Registro/>
+    },
+    {
+        path: "/panel-principal",
+        element: <PanelPrincipal/>
     }
 ]
