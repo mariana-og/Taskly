@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./PanelPrincipal.css"
 import { alertaConfirmacion } from '../helpers/Funciones'
+import { Link } from 'react-router-dom'
 let apiTareas = "http://localhost:3000/tareas"
 
 const PanelPrincipal = () => {
@@ -58,7 +59,7 @@ const PanelPrincipal = () => {
 
       <div className="task-controls">
         <h3>Tareas</h3>
-        <button className="new-task-btn">+ Nueva Tarea</button>
+       <Link to={"/panel-principal/crear-tarea"}><button className="new-task-btn">+ Nueva Tarea</button></Link> 
       </div>
 
       <input type="text" placeholder="Buscar tareas" className="search-input" />
@@ -71,6 +72,7 @@ const PanelPrincipal = () => {
             <th>Prioridad</th>
             <th>Descripcion</th>
             <th>Acciones</th>
+            <th>Estado</th>
           </tr>
         </thead>
         <tbody>
@@ -79,6 +81,7 @@ const PanelPrincipal = () => {
             <tr key={index}>
               <td>{tarea.titulo}</td>
               <td>{tarea.fecha_limite}</td>
+          
               <td>
                 <span className={`priority ${tarea.prioridad.toLowerCase()}`}>
                   {tarea.prioridad}
@@ -89,6 +92,7 @@ const PanelPrincipal = () => {
                 <button className="edit-btn">Editar</button>
                 <button className="delete-btn" onClick={()=>eliminarTarea(tarea.id)}>Eliminar</button>
               </td>
+              <td>{tarea.estado}</td>
             </tr>
           ))}
         </tbody>

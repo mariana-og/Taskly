@@ -32,7 +32,17 @@
       "titulo": "Realizar maqueta de la celula",
       "fecha_limite": "2025-07-02",
       "prioridad": "importante",
-      "descripcion": "comprar materiales, investigar, explicar funcionalidades y entregarla"
+      "descripcion": "comprar materiales, investigar, explicar funcionalidades y entregarla",
+      "estado": "completada"
+    },
+    {
+      "id": "bd6c",
+      "titulo": "maqueta del sistema solar",
+      "descripcion": "investiga",
+      "fecha_limite": "2025-08-12",
+      "prioridad": "Baja",
+      "estado": "Pendiente",
+      "id_usuario": "2"
     }
   ]
 }
