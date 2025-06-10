@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import "./PanelPrincipal.css"
 import { alertaConfirmacion } from '../helpers/Funciones'
 import { Link } from 'react-router-dom'
+import Encabezado from '../componentes/Encabezado'
 let apiTareas = "http://localhost:3000/tareas"
 
 const PanelPrincipal = () => {
@@ -32,13 +33,7 @@ const PanelPrincipal = () => {
   return (
     <div>
        <div className="dashboard-container">
-      <header className="header">
-        <h1 className="logo">✔ Taskly</h1>
-        <div className="user-info">
-          <span>Juan Pérez</span>
-          <button className="logout-btn">Cerrar sesión</button>
-        </div>
-      </header>
+       <Encabezado/>
 
       <h2 className="section-title">Panel de Control</h2>
 
@@ -89,7 +84,8 @@ const PanelPrincipal = () => {
               </td>
                <td>{tarea.descripcion}</td>
               <td>
-                <button className="edit-btn">Editar</button>
+                <Link to={"/panel-principal/editar/" +tarea.id}><button className="edit-btn">Editar</button></Link>
+                
                 <button className="delete-btn" onClick={()=>eliminarTarea(tarea.id)}>Eliminar</button>
               </td>
               <td>{tarea.estado}</td>
