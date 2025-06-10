@@ -36,58 +36,28 @@ Frontend: Vite + React (puerto por defecto: http://localhost:5173)
 💾 INSTALACIÓN:
 Sigue estos pasos para clonar y ejecutar el proyecto localmente:
 
-# 1. Clona el repositorio
-git clone https://github.com/mariana-og/Taskly.git
-cd track-x
+#1. clona el repositorio
+git clone https://github.com/tu-usuario/Taskly.git
+cd Taskly
 
-# 2. Instala las dependencias del frontend
-npm install
+#2. instala las dependencias del frontend
+npm install o npm i
 
-# 3. Inicia el servidor JSON (backend simulado)
-npx json-server --watch db.json --port 3000
+#3. inicia el servidor JSON (backend simulado)
+npm run back
 
-# 4. En una nueva terminal, inicia el frontend con Vite
+#4. en una nueva terminal, inicia el frontend con vite
 npm run dev
 
 🧩 MODELO DE DATOS (NoSQL):
 USUARIOS:
-[
-  {
-    "id": "1",
-    "nombre": "mariana osorio",
-    "usuario": "marihermosa",
-    "contraseña": "marihermosa"
-  },
   {
     "id": "2",
     "nombre": "alguien x",
     "usuario": "usuario2",
     "contraseña": "usuario2"
-  },
-  {
-    "id": "519f",
-    "nombre": "juan rosales",
-    "usuario": "juanmaata",
-    "contrasena": "1234"
-  },
-  {
-    "id": "daee",
-    "nombre": "juan osorio",
-    "usuario": "juanmta",
-    "contrasena": "1234"
   }
-]
 TAREAS:
-[
-  {
-    "id_usuario": "2",
-    "id": "1",
-    "titulo": "Realizar maqueta de la celula",
-    "fecha_limite": "2025-07-02",
-    "prioridad": "Completada",
-    "descripcion": "comprar materiales, investigar, explicar funcionalidades y entregarla",
-    "estado": "completada"
-  },
   {
     "id": "bd6c",
     "titulo": "vocabulario en ingles",
