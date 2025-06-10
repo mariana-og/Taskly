@@ -1,3 +1,4 @@
+import RutaProtegida from "../componentes/RutaProtegida.jsx"
 import CrearTarea from "../pages/CrearTarea.jsx"
 import EditarTarea from "../pages/EditarTarea.jsx"
 import Login from "../pages/Login.jsx"
@@ -15,15 +16,16 @@ export let enrutador=[
     },
     {
         path: "/panel-principal",
-        element: <PanelPrincipal/>
+        element: <RutaProtegida proteger={<PanelPrincipal/>} />
+
     },
     {
     path: "/panel-principal/crear-tarea",
-    element: <CrearTarea/>
+    element: <RutaProtegida proteger={<CrearTarea/>} />
     },
     {
     path: "panel-principal/editar/:id",
-    element: <EditarTarea/>
+    element: <RutaProtegida proteger={<EditarTarea/>} />
     }
     
     

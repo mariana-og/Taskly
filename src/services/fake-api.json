@@ -31,9 +31,9 @@
       "id": "1",
       "titulo": "Realizar maqueta de la celula",
       "fecha_limite": "2025-07-02",
-      "prioridad": "importante",
+      "prioridad": "Media",
       "descripcion": "comprar materiales, investigar, explicar funcionalidades y entregarla",
-      "estado": "completada"
+      "estado": "Completada"
     },
     {
       "id": "bd6c",

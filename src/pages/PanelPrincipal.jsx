@@ -8,6 +8,7 @@ let apiTareas = "http://localhost:3000/tareas"
 const PanelPrincipal = () => {
   let usuario =   JSON.parse(localStorage.getItem("usuario"))
   const [tareas, setTareas]= useState([])
+  const [busqueda, setBusqueda]= useState("")
   function getTareas() {
     fetch(apiTareas)
       .then((response) => response.json())
@@ -29,6 +30,25 @@ const PanelPrincipal = () => {
     alertaConfirmacion(id, apiTareas, getTareas);
   }
 
+   function obtenerTareasFiltradas() {
+    return tareas
+      .filter((tarea) => tarea.id_usuario == usuario.id)
+      .filter((tarea) =>
+        tarea.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
+        tarea.descripcion.toLowerCase().includes(busqueda.toLowerCase())
+      );
+
+  }
+
+  let tareasFiltradas = obtenerTareasFiltradas();
+  
+   function contarPorEstado(estado) {
+  return tareas.filter(
+    (tarea) => tarea.id_usuario === usuario.id && tarea.estado === estado
+  ).length;
+}
+
+  
 
   return (
     <div>
@@ -39,25 +59,35 @@ const PanelPrincipal = () => {
 
       <div className="cards-container">
         <div className="card pending">
-          <p className="count">5</p>
+          <p className="count">{contarPorEstado("Pendiente")}</p>
           <p>Pendientes</p>
         </div>
         <div className="card completed">
-          <p className="count">3</p>
+          <p className="count">{contarPorEstado("Completada")}</p>
           <p>Completadas</p>
         </div>
         <div className="card overdue">
-          <p className="count">2</p>
+          <p className="count">{contarPorEstado("Vencida")}</p>
           <p>Vencidas</p>
+        </div><div className="card precesing">
+          <p className="count">{contarPorEstado("En Proceso")}</p>
+          <p>En Proceso</p>
         </div>
       </div>
+
+
 
       <div className="task-controls">
         <h3>Tareas</h3>
        <Link to={"/panel-principal/crear-tarea"}><button className="new-task-btn">+ Nueva Tarea</button></Link> 
       </div>
-
-      <input type="text" placeholder="Buscar tareas" className="search-input" />
+       <input
+          type="text"
+          placeholder="Buscar tareas"
+          className="search-input"
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+        />
 
       <table className="task-table">
         <thead>
@@ -72,7 +102,7 @@ const PanelPrincipal = () => {
         </thead>
         <tbody>
           {
-          filtradoUsuario.map((tarea, index) => (
+          tareasFiltradas.map((tarea, index) => (
             <tr key={index}>
               <td>{tarea.titulo}</td>
               <td>{tarea.fecha_limite}</td>
